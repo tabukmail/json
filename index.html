@@ -1,23 +1,24 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    </head>
-<body>
- 
-
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-function insertReply(content) {
-    document.getElementById('output').innerHTML = content;
-}
-
-// create script element
-var script = document.createElement('script');
-// assing src with callback name
-script.src = 'https://api.cryptowat.ch/assets';
-// insert script to document and load content
-document.body.appendChild(script);
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("https://api.cryptowat.ch", function(result){
+            $.each(result, function(i, field){
+                $("div").append(field + " ");
+            });
+        });
+    });
+});
 </script>
- 
+</head>
+<body>
+
+<button>Get JSON data</button>
+
+<div></div>
+
 </body>
 </html>
