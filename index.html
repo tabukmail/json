@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+$.getJSON("https://api.cryptowat.ch/markets/prices",function(result){
+  $.each(result, function(i, field){
+    $("div").append(field + " ");
+      });
+    });
+  });
+});
+</script>
+</head>
 <body>
-<div id="container">
-  <div id="output" NOTHING YET </div>
-  </div>
-  <script src="script.js"></script>
+
+<button>Get JSON data</button>
+<div></div>
+
 </body>
 </html>
