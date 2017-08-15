@@ -5,7 +5,7 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <title>jQuery.getJSON demo</title>
   <script>
- $.getJSON("https://api.cryptowat.ch/markets/prices",function(json){
+ $.getJSONP("https://api.cryptowat.ch/markets/prices?callback=?",function(json){
   console.log(json);
 });
 </script>
