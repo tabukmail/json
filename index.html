@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
 $("button").click(function(){
-$.getJSON("https://api.cryptowat.ch/markets/prices",function(result){
+$.getJSON("http://50.116.19.49/rest/user.json?jsoncallback=?",function(result){
   $.each(result, function(i, field){
     $("div").append(field + " ");
       });
