@@ -1,33 +1,38 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<script src="jquery.js"></script>
-<script>
-(function($) {
-var url = 'http://www.jquery4u.com/scripts/jquery4u-sites.json?callback=?';
-
-$.ajax({
-   type: 'GET',
-    url: url,
-    async: false,
-    jsonpCallback: 'jsonCallback', <-- callback here
-    contentType: "application/json",
-    dataType: 'jsonp',
-    success: function(json) {
-       console.dir(json.sites);
-    },
-    error: function(e) {
-       console.log(e.message);
-    }
-});
-
-})(jQuery);
-</script>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <style>
+  img {
+    height: 100px;
+    float: left;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-
-<button>Get JSON data</button>
-<div></div>
-
+ 
+<div id="images"></div>
+ 
+<script>
+(function() {
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: "mount rainier",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+})();
+</script>
+ 
 </body>
 </html>
