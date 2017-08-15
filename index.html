@@ -4,22 +4,16 @@
 <title>JavaScript - read JSON from URL</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
-
 <body>
     <div class="mypanel"></div>
-
     <script>
     $.getJSON('https://api.cryptowat.ch/exchanges/kraken', function(data) {
-        
         var text = `Result: ${data.result}<br>
                     Allowance: ${data.allowance}<br>
-                    
-                    
-        
-        document.getElementById("mypanel").innerHTML = text;
-    });
+document.getElementById("mypanel").innerHTML = text;
+
+});
     </script>
-    
 </body>
 </html>
 
