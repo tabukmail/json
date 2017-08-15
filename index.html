@@ -5,25 +5,18 @@
     </head>
 <body>
  
-<div id="images"></div>
- 
+
 <script>
-(function() {
-  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-  $.getJSON( flickerAPI, {
-    tags: "mount rainier",
-    tagmode: "any",
-    format: "json"
-  })
-    .done(function( data ) {
-      $.each( data.items, function( i, item ) {
-        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-        if ( i === 3 ) {
-          return false;
-        }
-      });
-    });
-})();
+function insertReply(content) {
+    document.getElementById('output').innerHTML = content;
+}
+
+// create script element
+var script = document.createElement('script');
+// assing src with callback name
+script.src = 'https://api.cryptowat.ch/assets';
+// insert script to document and load content
+document.body.appendChild(script);
 </script>
  
 </body>
