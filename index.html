@@ -2,23 +2,9 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $.getJSON("https://api.cryptowat.ch", function(result){
-            $.each(result, function(i, field){
-                $("div").append(field + " ");
-            });
-        });
-    });
-});
-</script>
-</head>
+<title>Fetch JSON array Data</title>
 <body>
-
-<button>Get JSON data</button>
-
-<div></div>
-
+<ul></ul>
+<script type="text/javascript" src="script/my_script.js"></script>
 </body>
 </html>
