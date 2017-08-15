@@ -8,13 +8,11 @@
     <div class="mypanel"></div>
     <script>
     $.getJSON('https://api.cryptowat.ch/exchanges/kraken', function(data) {
-        var text = `Result: ${data.result}<br>
-                    Allowance: ${data.allowance}<br>
-document.getElementById("mypanel").innerHTML = text;
+        console.log(data);
 
 })
-       </script> 
-        </body>
+</script> 
+</body>
 </html>
 
 
