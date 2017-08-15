@@ -9,11 +9,11 @@
     <div class="mypanel"></div>
 
     <script>
-    $.getJSON('http://time.jsontest.com', function(data) {
+    $.getJSON('https://api.cryptowat.ch/exchanges/kraken', function(data) {
         
-        var text = `Date: ${data.date}<br>
-                    Time: ${data.time}<br>
-                    Unix time: ${data.milliseconds_since_epoch}`
+        var text = `Result: ${data.result}<br>
+                    Allowance: ${data.allowance}<br>
+                    
                     
         
         $(".mypanel").html(text);
