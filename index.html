@@ -1,33 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <script header("Content-Type: text/javascript; charset=utf-8")></script>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <title>jQuery.getJSON demo</title>
-  <script>
- $.ajax({
-  //JSONP API
-  url: "https://api.cryptowat.ch/markets/gdax/btcusd/price?callback=jsonpcallback&id=123",
-  //the name of the callback function
-  jsonp: "jsonpcallback",
-  //tell jQuery to expect JSONP
-  dataType: "jsonp",
-  //tell YQL what we want and that we want JSON
-  data: {
-    id: "123"
-  },
-  //work with the response
-  success: function(data) {
-    console.log(data); //formatted JSON data
-  }
-});
-</script>
- 
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="mypanel"></div>
+
+    <script>
+    $.getJSON('http://time.jsontest.com', function(data) {
+        
+        var text = `Date: ${data.date}<br>
+                    Time: ${data.time}<br>
+                    Unix time: ${data.milliseconds_since_epoch}`
+                    
+        
+        $(".mypanel").html(text);
+    });
+    </script>
+    
 </body>
 </html>
-
-
 
 
 
